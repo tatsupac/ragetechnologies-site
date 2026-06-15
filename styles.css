@@ -962,7 +962,13 @@ footer small {
   }
 
   .service-overview h2 {
-    font-size: 23px;
+    font-size: clamp(15px, 4.8vw, 23px);
+    line-height: 1.42;
+  }
+
+  .service-overview h2 span {
+    display: block;
+    white-space: nowrap;
   }
 
   .service-overview p {
