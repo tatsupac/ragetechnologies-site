@@ -6,13 +6,19 @@
     <title>プライバシーポリシー | RageTechnologies</title>
     <meta name="description" content="RageTechnologiesが提供するOTOZUREのプライバシーポリシーです。" />
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="/">
         <img src="/assets/ragetechnologies-logo.svg" alt="RageTechnologies" />
       </a>
-      <nav aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-nav" aria-label="Primary navigation">
         <a href="/#vision">Vision</a>
         <a href="/#business">Business</a>
         <a href="/#company">Company</a>
@@ -30,7 +36,7 @@
       <p>
         事業者名: RageTechnologies 株式会社<br />
         所在地: 東京都渋谷区円山町５番５号 MIEUX渋谷ビル8階<br />
-        お問い合わせ先: <a href="mailto:contact@ragetechnologies.jp">contact@ragetechnologies.jp</a>
+        お問い合わせ先: <a href="mailto:contact@ragetechnologies.jp">contact@<wbr />ragetechnologies.jp</a>
       </p>
 
       <h2>取得する情報</h2>
@@ -105,19 +111,29 @@
       </p>
 
       <h2>お問い合わせ</h2>
-      <p>個人情報の取り扱いに関するお問い合わせは <a href="mailto:contact@ragetechnologies.jp">contact@ragetechnologies.jp</a> までご連絡ください。</p>
+      <p>個人情報の取り扱いに関するお問い合わせは <a href="mailto:contact@ragetechnologies.jp">contact@<wbr />ragetechnologies.jp</a> までご連絡ください。</p>
       <p class="note">制定日: 2026年6月13日<br />最終更新日: 2026年6月14日</p>
     </main>
     <footer>
       <div class="footer-brand">
         <img class="footer-logo" src="/assets/ragetechnologies-logo-white.svg" alt="RageTechnologies" />
       </div>
-      <nav aria-label="Footer navigation">
-        <a href="/#vision">Vision</a>
-        <a href="/#business">Business</a>
-        <a href="/#company">Company</a>
-        <a href="/#contact">Contact</a>
-        <a href="/privacy.html">Privacy Policy</a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-nav-group">
+          <p class="footer-nav-label">Navigation</p>
+          <div class="footer-nav-links">
+            <a href="/#vision">Vision</a>
+            <a href="/#business">Business</a>
+            <a href="/#company">Company</a>
+            <a href="/#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-nav-group">
+          <p class="footer-nav-label">Legal</p>
+          <div class="footer-nav-links">
+            <a href="/privacy.html">Privacy Policy</a>
+          </div>
+        </div>
       </nav>
       <small>© 2026 RageTechnologies Inc.</small>
     </footer>

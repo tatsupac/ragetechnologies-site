@@ -9,13 +9,19 @@
       content="RageTechnologiesは、モバイルアプリケーションと関連Webサービスの企画・開発・運営を行うテクノロジー企業です。"
     />
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="RageTechnologies home">
         <img src="/assets/ragetechnologies-logo.svg" alt="RageTechnologies" />
       </a>
-      <nav aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-nav" aria-label="Primary navigation">
         <a href="#vision">Vision</a>
         <a href="#business">Business</a>
         <a href="#company">Company</a>
@@ -38,10 +44,7 @@
       <section class="vision-section" id="vision">
         <div class="vision-copy">
           <p class="section-label">Vision</p>
-          <h2>
-            <span>テクノロジーが遠ざけた、</span>
-            <span>アナログな体験の価値を取り戻す。</span>
-          </h2>
+          <h2><span>テクノロジーが遠ざけた、</span><span>アナログな体験の価値を取り戻す。</span></h2>
           <p>
             RageTechnologiesは、便利さや効率の中で薄れてしまった、現実の場でしか得られない熱量、手触り、偶然性をもう一度取り戻すためのサービスをつくります。テクノロジーは体験を置き換えるものではなく、アナログな体験へ踏み出すための支えであるべきだと考えています。
           </p>
@@ -162,7 +165,7 @@
             業務提携、開発のご相談、採用、OTOZUREの利用方法・不具合・アカウントに関する
             サポートなど、お気軽にご連絡ください。
           </p>
-          <a href="mailto:contact@ragetechnologies.jp">contact@ragetechnologies.jp</a>
+          <a href="mailto:contact@ragetechnologies.jp">contact@<wbr />ragetechnologies.jp</a>
         </section>
       </section>
     </main>
@@ -171,12 +174,22 @@
       <div class="footer-brand">
         <img class="footer-logo" src="/assets/ragetechnologies-logo-white.svg" alt="RageTechnologies" />
       </div>
-      <nav aria-label="Footer navigation">
-        <a href="#vision">Vision</a>
-        <a href="#business">Business</a>
-        <a href="#company">Company</a>
-        <a href="#contact">Contact</a>
-        <a href="/privacy.html">Privacy Policy</a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-nav-group">
+          <p class="footer-nav-label">Navigation</p>
+          <div class="footer-nav-links">
+            <a href="#vision">Vision</a>
+            <a href="#business">Business</a>
+            <a href="#company">Company</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-nav-group">
+          <p class="footer-nav-label">Legal</p>
+          <div class="footer-nav-links">
+            <a href="/privacy.html">Privacy Policy</a>
+          </div>
+        </div>
       </nav>
       <small>© 2026 RageTechnologies Inc.</small>
     </footer>

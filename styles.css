@@ -112,7 +112,70 @@ nav {
 }
 
 nav a {
+  position: relative;
   text-decoration: none;
+}
+
+.site-header nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.42);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.site-header nav a:hover::after,
+.site-header nav a:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0;
+  border-radius: 999px;
+  background: currentColor;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .hero {
@@ -274,6 +337,12 @@ nav a {
   .motion-line,
   .motion-pulse {
     animation: none;
+  }
+
+  .menu-toggle span,
+  .site-header nav,
+  .site-header nav a {
+    transition: none;
   }
 }
 
@@ -510,10 +579,23 @@ footer {
   color: #fff;
 }
 
-footer nav {
+.footer-nav {
+  display: flex;
+  align-items: center;
   gap: 42px;
   color: #fff;
   font-size: 14px;
+}
+
+.footer-nav-group,
+.footer-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.footer-nav-label {
+  display: none;
 }
 
 footer small {
@@ -653,14 +735,38 @@ footer small {
     justify-self: start;
   }
 
-  footer nav {
+  .footer-nav {
     flex-wrap: wrap;
     gap: 18px 28px;
     font-size: 13px;
   }
+
+  .footer-nav-group,
+  .footer-nav-links {
+    flex-wrap: wrap;
+    gap: 18px 28px;
+  }
 }
 
 @media (max-width: 560px) {
+  .site-header,
+  .vision-section,
+  .business-section,
+  .company-contact,
+  footer {
+    padding-inline: 22px;
+  }
+
+  .site-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+    padding-block: 18px;
+    position: relative;
+    z-index: 10;
+  }
+
   .brand {
     font-size: 20px;
   }
@@ -672,7 +778,139 @@ footer small {
   }
 
   .brand img {
-    width: min(260px, 82vw);
+    width: min(236px, 76vw);
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .site-header nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 20px;
+    left: 20px;
+    z-index: 20;
+    display: grid;
+    visibility: hidden;
+    width: auto;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid rgba(217, 222, 231, 0.9);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+      0 22px 44px rgba(16, 24, 40, 0.18),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    line-height: 1.25;
+    pointer-events: none;
+    transform: translate(18px, -16px) scale(0.9);
+    transform-origin: calc(100% - 24px) -46px;
+    transition:
+      opacity 180ms ease,
+      transform 220ms cubic-bezier(0.2, 0.82, 0.2, 1),
+      visibility 0ms linear 220ms;
+  }
+
+  .site-header.menu-open nav {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0) scale(1);
+    transition-delay: 0ms;
+  }
+
+  .site-header nav a {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    min-width: 0;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: rgba(247, 249, 251, 0.72);
+    transition:
+      opacity 180ms ease,
+      background-color 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease,
+      transform 160ms ease;
+    opacity: 0;
+    transform: translate(12px, -4px);
+  }
+
+  .site-header.menu-open nav a {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  .site-header.menu-open nav a:nth-child(1) {
+    transition-delay: 40ms;
+  }
+
+  .site-header.menu-open nav a:nth-child(2) {
+    transition-delay: 70ms;
+  }
+
+  .site-header.menu-open nav a:nth-child(3) {
+    transition-delay: 100ms;
+  }
+
+  .site-header.menu-open nav a:nth-child(4) {
+    transition-delay: 130ms;
+  }
+
+  .site-header nav a::after {
+    display: none;
+  }
+
+  .site-header nav a:hover,
+  .site-header nav a:focus-visible {
+    border-color: rgba(0, 107, 115, 0.22);
+    background: rgba(232, 246, 246, 0.92);
+    color: var(--accent);
+    outline: 0;
+    transform: translateY(-1px);
+  }
+
+  .hero {
+    min-height: 138px;
+  }
+
+  .vision-section {
+    padding-block: 54px;
+  }
+
+  .business-section {
+    padding-block: 44px;
+  }
+
+  .company-contact {
+    gap: 28px;
+    padding-block: 54px;
+  }
+
+  .section-label {
+    margin-bottom: 22px;
+  }
+
+  h2 {
+    font-size: 29px;
+    line-height: 1.34;
+  }
+
+  .vision-copy h2 span {
+    display: inline;
+  }
+
+  .vision-copy p:not(.section-label) {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.85;
   }
 
   .footer-brand img {
@@ -723,7 +961,17 @@ footer small {
   }
 
   .contact-card {
-    padding: 32px 28px;
+    padding: 28px 22px;
+  }
+
+  .contact-card h2 {
+    font-size: 28px;
+  }
+
+  .contact-card p {
+    margin: 18px 0 24px;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
   .contact-card a {
@@ -735,6 +983,117 @@ footer small {
   td {
     display: block;
     width: 100%;
+    padding: 14px 18px;
     overflow-wrap: anywhere;
+  }
+
+  footer {
+    gap: 24px;
+    padding-block: 30px;
+  }
+
+  .footer-nav {
+    display: grid;
+    gap: 22px;
+    padding-bottom: 0;
+    line-height: 1.3;
+  }
+
+  .footer-nav-group {
+    display: block;
+  }
+
+  .footer-nav-label {
+    display: block;
+    margin: 0 0 10px;
+    color: #7dd3d0;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .footer-nav-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .footer-nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    color: #fff;
+  }
+
+  .footer-nav-links a:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .legal-page {
+    padding: 54px 22px 76px;
+  }
+
+  .legal-page h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .legal-page h2 {
+    margin-top: 34px;
+    font-size: 22px;
+  }
+
+  .legal-page p,
+  .legal-page li {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .support-box {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .business-feature-list article {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-icon {
+    grid-row: auto;
+    justify-content: start;
+    min-height: 54px;
+    padding-left: 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .business-feature-list h3,
+  .business-feature-list p {
+    grid-column: 1;
+  }
+
+  .business-feature-list h3 {
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 340px) {
+  .site-header,
+  .vision-section,
+  .business-section,
+  .company-contact,
+  footer {
+    padding-inline: 20px;
+  }
+
+  .brand img {
+    width: min(220px, 74vw);
+  }
+
+  h2 {
+    font-size: 28px;
   }
 }
