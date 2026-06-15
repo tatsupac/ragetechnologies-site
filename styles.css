@@ -409,13 +409,13 @@ h2 {
 
 .service-intro {
   display: grid;
-  grid-template-columns: minmax(260px, 0.7fr) minmax(500px, 1.3fr);
+  grid-template-columns: minmax(360px, 0.85fr) minmax(500px, 1.15fr);
   gap: clamp(32px, 4.5vw, 64px);
   align-items: stretch;
 }
 
 .service-overview {
-  max-width: 390px;
+  max-width: 460px;
 }
 
 .business-logo {
@@ -430,9 +430,14 @@ h2 {
 }
 
 .service-overview h2 {
-  max-width: 390px;
-  font-size: clamp(23px, 1.9vw, 30px);
+  max-width: 460px;
+  font-size: clamp(18px, 1.6vw, 30px);
   line-height: 1.48;
+}
+
+.service-overview h2 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .service-overview p {
@@ -735,8 +740,8 @@ footer small {
   }
 
   .service-overview h2 {
-    max-width: 480px;
-    font-size: 26px;
+    max-width: 460px;
+    font-size: clamp(18px, 2.45vw, 24px);
   }
 
   .service-overview p {
