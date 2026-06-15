@@ -874,6 +874,11 @@ footer small {
     transition-delay: 130ms;
   }
 
+  .site-header.menu-breakpoint-reset nav,
+  .site-header.menu-breakpoint-reset nav a {
+    transition: none;
+  }
+
   .site-header nav a::after {
     display: none;
   }
