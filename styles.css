@@ -904,7 +904,7 @@ footer small {
   }
 
   .vision-copy h2 span {
-    display: inline;
+    display: block;
   }
 
   .vision-copy p:not(.section-label) {
