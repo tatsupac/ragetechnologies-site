@@ -14,6 +14,14 @@ menuToggle?.addEventListener("click", () => {
   setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
 });
 
+document.addEventListener("click", (event) => {
+  if (!menuToggle || !primaryNav || menuToggle.getAttribute("aria-expanded") !== "true") return;
+  if (!(event.target instanceof Node)) return;
+  if (menuToggle.contains(event.target) || primaryNav.contains(event.target)) return;
+
+  setMenuOpen(false);
+});
+
 primaryNav?.addEventListener("click", (event) => {
   if (event.target instanceof HTMLAnchorElement) {
     setMenuOpen(false);
