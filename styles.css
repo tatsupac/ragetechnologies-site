@@ -419,7 +419,7 @@ h2 {
 }
 
 .business-logo {
-  width: min(205px, 100%);
+  width: min(168px, 100%);
   margin: 0 0 22px;
 }
 
@@ -790,7 +790,7 @@ footer small {
   }
 
   .business-logo {
-    width: min(235px, 60vw);
+    width: min(180px, 52vw);
     margin: 0 auto 26px;
   }
 
@@ -1007,7 +1007,7 @@ footer small {
   }
 
   .business-logo {
-    width: min(200px, 70vw);
+    width: min(160px, 62vw);
   }
 
   .service-overview {
@@ -1015,7 +1015,7 @@ footer small {
   }
 
   .service-overview .business-logo {
-    width: min(200px, 70vw);
+    width: min(160px, 62vw);
     margin: 0 0 22px;
   }
 
