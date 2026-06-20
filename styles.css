@@ -791,7 +791,7 @@ footer small {
 
   .business-logo {
     width: min(180px, 52vw);
-    margin: 0 auto 26px;
+    margin: 0 0 26px;
   }
 
   .service-overview h2 {
