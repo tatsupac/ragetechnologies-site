@@ -496,7 +496,9 @@ h2 {
   border-left: 1px solid var(--line);
   font-size: 18px;
   font-weight: 900;
-  white-space: nowrap;
+  line-height: 1.35;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .business-feature-list p {
