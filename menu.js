@@ -217,7 +217,7 @@ if (!prefersReducedMotion.matches && glitchTextContainers.length + glitchMediaTa
     window.clearTimeout(glitchTimer);
     if (document.hidden) return;
 
-    const delay = initial ? 2400 + Math.random() * 2600 : 6500 + Math.random() * 7000;
+    const delay = initial ? 2000 + Math.random() * 2000 : 5500 + Math.random() * 6000;
     glitchTimer = window.setTimeout(triggerGlitch, delay);
   }
 
