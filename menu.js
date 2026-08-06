@@ -49,3 +49,54 @@ document.addEventListener("keydown", (event) => {
 });
 
 mobileMenuQuery.addEventListener("change", resetMenuForBreakpoint);
+
+const revealGroups = [
+  [".vision-copy", ".section-label, h2, p:not(.section-label)"],
+  [".business-section", ":scope > .section-label, .service-overview h2, .service-overview p"],
+  [".company-section", ":scope > .section-label, h2, table"],
+  [".contact-card", ":scope > .section-label, h2, p:not(.section-label), a"],
+  [".legal-page", ":scope > h1, :scope > p, :scope > h2, :scope > ul, :scope > ol, :scope > .support-box, :scope > .note"],
+  ["footer", ".footer-nav"],
+];
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (!prefersReducedMotion.matches) {
+  const revealItems = [];
+
+  revealGroups.forEach(([groupSelector, itemSelector]) => {
+    const group = document.querySelector(groupSelector);
+    if (!group) return;
+
+    group.querySelectorAll(itemSelector).forEach((item, index) => {
+      item.classList.add("reveal-item");
+      item.style.setProperty("--reveal-delay", `${Math.min(index, 3) * 70}ms`);
+      revealItems.push(item);
+    });
+  });
+
+  document.documentElement.classList.add("reveal-enabled");
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.12,
+      },
+    );
+
+    requestAnimationFrame(() => {
+      revealItems.forEach((item) => revealObserver.observe(item));
+    });
+  } else {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  }
+}
