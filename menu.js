@@ -53,7 +53,7 @@ mobileMenuQuery.addEventListener("change", resetMenuForBreakpoint);
 const revealGroups = [
   [".vision-copy", ".section-label, h2, p:not(.section-label)"],
   [".business-section", ":scope > .section-label, .service-overview h2, .service-overview p"],
-  [".company-section", ":scope > .section-label, h2, table"],
+  [".company-section", ":scope > .section-label, h2, .company-details"],
   [".contact-card", ":scope > .section-label, h2, p:not(.section-label), a"],
   [".legal-page", ":scope > h1, :scope > p, :scope > h2, :scope > ul, :scope > ol, :scope > .support-box, :scope > .note"],
   ["footer", ".footer-nav"],

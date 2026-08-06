@@ -403,7 +403,6 @@ h2 {
   max-width: 720px;
   margin: 26px 0 0;
   color: #344054;
-  font-size: 16px;
   line-height: 1.9;
 }
 
@@ -446,7 +445,6 @@ h2 {
 .service-overview p {
   margin: 18px 0 0;
   color: #344054;
-  font-size: 14px;
   line-break: strict;
   line-height: 1.85;
   text-wrap: pretty;
@@ -457,11 +455,20 @@ h2 {
 }
 
 .company-contact {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-  gap: 40px;
+  display: block;
   padding-block: 72px;
   background: var(--panel);
+}
+
+.company-section {
+  max-width: 900px;
+}
+
+.vision-copy h2,
+.service-overview h2,
+.company-section h2,
+.contact-card h2 {
+  font-size: clamp(26px, 2.4vw, 34px);
 }
 
 table {
@@ -499,29 +506,86 @@ td {
   color: #475467;
 }
 
+.company-details {
+  margin: 22px 0 0;
+}
+
+.company-detail {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: baseline;
+  gap: clamp(22px, 3vw, 40px);
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+}
+
+.company-detail:first-child {
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+}
+
+.company-detail dt,
+.company-detail dd {
+  margin: 0;
+}
+
+.company-detail dt {
+  color: var(--subtle);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.company-detail dd {
+  color: #344054;
+  line-height: 1.65;
+}
+
 .contact-card {
-  align-self: end;
-  padding: 42px 46px;
-  border: 1px solid var(--line);
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin-top: 56px;
+  padding: 48px 0 0;
   background: #fff;
 }
 
-.contact-card h2 {
-  font-size: clamp(28px, 3vw, 40px);
+.contact-card::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: var(--line);
+  content: "";
+  transform: translateX(-50%);
 }
 
-.contact-card p {
-  margin: 22px 0 28px;
+.contact-card h2,
+.contact-card p:not(.section-label),
+.contact-card a {
+  max-width: 760px;
+}
+
+.contact-card p:not(.section-label) {
+  margin: 18px 0 22px;
   color: #344054;
   line-height: 1.8;
 }
 
+.vision-copy p:not(.section-label),
+.service-overview p,
+.company-detail dd,
+.contact-card p:not(.section-label) {
+  font-size: 15px;
+}
+
 .contact-card a {
   display: block;
-  padding-top: 26px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
   color: var(--ink);
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
@@ -933,7 +997,6 @@ footer small {
 
   .vision-copy p:not(.section-label) {
     margin-top: 22px;
-    font-size: 15px;
     line-height: 1.85;
   }
 
@@ -961,26 +1024,29 @@ footer small {
   }
 
   .service-overview p {
-    font-size: 15px;
     line-height: 1.9;
   }
 
   .contact-card {
-    padding: 28px 22px;
+    margin-top: 40px;
+    padding: 40px 0 0;
   }
 
+  .vision-copy h2,
+  .service-overview h2,
+  .company-section h2,
   .contact-card h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
-  .contact-card p {
-    margin: 18px 0 24px;
-    font-size: 15px;
-    line-height: 1.75;
+  .contact-card p:not(.section-label) {
+    margin: 14px 0 18px;
+    line-height: 1.7;
   }
 
   .contact-card a {
-    font-size: 16px;
+    padding-top: 18px;
+    font-size: 14px;
     line-height: 1.45;
   }
 
@@ -990,6 +1056,16 @@ footer small {
     width: 100%;
     padding: 10px 16px;
     overflow-wrap: anywhere;
+  }
+
+  .company-details {
+    margin-top: 20px;
+  }
+
+  .company-detail {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 14px 0;
   }
 
   footer {
