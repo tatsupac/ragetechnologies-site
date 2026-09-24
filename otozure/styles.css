@@ -1169,3 +1169,13 @@ figure {
 
 .hero-download { width: fit-content; max-width: 100%; }
 .hero-download .hero-note { max-width: none; text-align: center; }
+
+/* Keep handwritten photo captions visible on narrow screens. */
+@media (max-width: 760px) {
+  .hero-handwritten { display: block; top: 86px; right: 24px; font-size: 17px; }
+  .download-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; justify-items: center; gap: 24px 12px; }
+  .download-panel .closing-logo, .download-panel .store-link, .download-panel .closing-note { grid-column: 1 / -1; }
+  .closing-left, .closing-right { display: block; position: static; margin: 0; }
+  .closing-left { font-size: 14px !important; letter-spacing: 1px !important; }
+  .closing-right { font-size: 12px; letter-spacing: 2px; }
+}
