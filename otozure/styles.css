@@ -1184,135 +1184,135 @@ figure {
 .how.shell {
   width: min(1440px, calc(100% - 100px));
   border-top: 0;
-  padding-top: 96px;
-  padding-bottom: 60px;
+  padding-top: 72px;
+  padding-bottom: 48px;
 }
 .how h2 {
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   font-size: 14px;
   letter-spacing: 0.55em;
 }
 .how h2 > span {
-  margin-top: 24px;
-  font-size: clamp(26px, 3vw, 46px);
+  margin-top: 16px;
+  font-size: clamp(24px, 2.5vw, 36px);
   font-weight: 700;
   line-height: 1.55;
   letter-spacing: 0;
   text-wrap: balance;
 }
 .how-flow > h3 {
-  margin-bottom: 24px;
-  font-size: 32px;
+  margin-bottom: 18px;
+  font-size: 26px;
   line-height: 1.6;
 }
 .how-flow + .how-flow {
-  margin-top: 72px;
-  padding-top: 48px;
+  margin-top: 44px;
+  padding-top: 32px;
   border-top: 1px solid #d6d4ce;
 }
 .how .steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 72px;
+  gap: 56px;
 }
 .how .steps li {
   min-width: 0;
-  padding-top: 34px;
+  padding-top: 28px;
   padding-bottom: 0;
   border-bottom: 0;
-  gap: 26px;
+  gap: 22px;
 }
 .how .step-number {
   width: auto;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--ink);
 }
 .how .step-icon {
-  width: 110px;
-  height: 110px;
+  width: 88px;
+  height: 88px;
 }
 .how .step-icon img {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 }
 .step-copy {
   min-width: 0;
 }
 .how .steps h4 {
-  margin: 0 0 12px;
-  font-size: clamp(18px, 1.55vw, 24px);
+  margin: 0 0 8px;
+  font-size: clamp(18px, 1.45vw, 22px);
   line-height: 1.5;
 }
 .how .steps p {
-  font-size: clamp(14px, 1.16vw, 18px);
-  line-height: 1.9;
+  font-size: clamp(14px, 1.12vw, 17px);
+  line-height: 1.8;
   overflow-wrap: anywhere;
 }
 .how .steps li:not(:last-child)::after {
   content: "";
   position: absolute;
-  width: 40px;
-  height: 40px;
-  right: -56px;
-  top: 66px;
+  width: 32px;
+  height: 32px;
+  right: -44px;
+  top: 56px;
   background: url("../assets/lp-arrow-right.svg") center / contain no-repeat;
 }
 @media (min-width: 761px) and (max-width: 1100px) {
   .how .steps {
-    gap: 40px;
+    gap: 32px;
   }
   .how .steps li {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 16px;
   }
   .how .step-icon {
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
   }
   .how .step-icon img {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
   .how .steps li:not(:last-child)::after {
-    width: 28px;
-    height: 28px;
-    right: -34px;
-    top: 60px;
+    width: 24px;
+    height: 24px;
+    right: -28px;
+    top: 52px;
   }
 }
 @media (max-width: 760px) {
   .how.shell {
     width: calc(100% - 40px);
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
   .how h2 {
-    margin-bottom: 36px;
+    margin-bottom: 28px;
     font-size: 11px;
   }
   .how h2 > span {
-    margin-top: 16px;
-    font-size: clamp(23px, 6vw, 28px);
+    margin-top: 12px;
+    font-size: clamp(22px, 5.6vw, 26px);
   }
   .how-flow > h3 {
-    margin-bottom: 20px;
-    font-size: 23px;
+    margin-bottom: 16px;
+    font-size: 21px;
   }
   .how-flow + .how-flow {
-    margin-top: 32px;
-    padding-top: 28px;
+    margin-top: 24px;
+    padding-top: 24px;
   }
   .how .steps {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
   }
   .how .steps li {
-    gap: 18px;
-    padding-top: 28px;
-    padding-bottom: 20px;
+    gap: 16px;
+    padding-top: 24px;
+    padding-bottom: 16px;
     border-bottom: 1px solid #dedbd3;
   }
   .how .steps li:last-child {
@@ -1323,15 +1323,15 @@ figure {
     content: none;
   }
   .how .step-number {
-    font-size: 18px;
+    font-size: 17px;
   }
   .how .step-icon {
-    width: 66px;
-    height: 66px;
+    width: 58px;
+    height: 58px;
   }
   .how .step-icon img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
   .how .steps h4 {
     margin-bottom: 6px;
@@ -1339,6 +1339,6 @@ figure {
   }
   .how .steps p {
     font-size: 14px;
-    line-height: 1.85;
+    line-height: 1.75;
   }
 }
