@@ -1179,3 +1179,166 @@ figure {
   .closing-left { font-size: 14px !important; letter-spacing: 1px !important; }
   .closing-right { font-size: 12px; letter-spacing: 2px; }
 }
+
+/* HOW TO: recruitment and personal invitations, selected concept 1. */
+.how.shell {
+  width: min(1440px, calc(100% - 100px));
+  border-top: 0;
+  padding-top: 96px;
+  padding-bottom: 60px;
+}
+.how h2 {
+  margin-bottom: 64px;
+  font-size: 14px;
+  letter-spacing: 0.55em;
+}
+.how h2 > span {
+  margin-top: 24px;
+  font-size: clamp(26px, 3vw, 46px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+.how-flow > h3 {
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 1.6;
+}
+.how-flow + .how-flow {
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid #d6d4ce;
+}
+.how .steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 72px;
+}
+.how .steps li {
+  min-width: 0;
+  padding-top: 34px;
+  padding-bottom: 0;
+  border-bottom: 0;
+  gap: 26px;
+}
+.how .step-number {
+  width: auto;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.how .step-icon {
+  width: 110px;
+  height: 110px;
+}
+.how .step-icon img {
+  width: 48px;
+  height: 48px;
+}
+.step-copy {
+  min-width: 0;
+}
+.how .steps h4 {
+  margin: 0 0 12px;
+  font-size: clamp(18px, 1.55vw, 24px);
+  line-height: 1.5;
+}
+.how .steps p {
+  font-size: clamp(14px, 1.16vw, 18px);
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.how .steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -56px;
+  top: 66px;
+  background: url("../assets/lp-arrow-right.svg") center / contain no-repeat;
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .how .steps {
+    gap: 40px;
+  }
+  .how .steps li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .how .step-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .how .step-icon img {
+    width: 38px;
+    height: 38px;
+  }
+  .how .steps li:not(:last-child)::after {
+    width: 28px;
+    height: 28px;
+    right: -34px;
+    top: 60px;
+  }
+}
+@media (max-width: 760px) {
+  .how.shell {
+    width: calc(100% - 40px);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .how h2 {
+    margin-bottom: 36px;
+    font-size: 11px;
+  }
+  .how h2 > span {
+    margin-top: 16px;
+    font-size: clamp(23px, 6vw, 28px);
+  }
+  .how-flow > h3 {
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+  .how-flow + .how-flow {
+    margin-top: 32px;
+    padding-top: 28px;
+  }
+  .how .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .how .steps li {
+    gap: 18px;
+    padding-top: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedbd3;
+  }
+  .how .steps li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .how .steps li:not(:last-child)::after {
+    content: none;
+  }
+  .how .step-number {
+    font-size: 18px;
+  }
+  .how .step-icon {
+    width: 66px;
+    height: 66px;
+  }
+  .how .step-icon img {
+    width: 32px;
+    height: 32px;
+  }
+  .how .steps h4 {
+    margin-bottom: 6px;
+    font-size: 17px;
+  }
+  .how .steps p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+}
